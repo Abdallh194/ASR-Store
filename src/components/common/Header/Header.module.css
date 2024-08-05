@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+.Header {
+  font-family: "Montserrat";
+  font-weight: 500;
+}
+.Header .LogoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+.Header .LogoHeader .Logo {
+  font-size: 30px;
+  font-family: "Amatic SC";
+}
+.Header .LogoHeader .Logo span {
+  display: inline-block;
+}
+.Header .LogoHeader .cartBasket {
+  font-size: 31px;
+  position: relative;
+  margin-right: 15px;
+}
+.Header .LogoHeader .cartBasket::before {
+  position: absolute;
+  content: attr(cart-length);
+  right: -13px;
+  top: 0;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid rgb(153, 153, 153);
+  font-size: 19px;
+  line-height: 1.35;
+  text-align: center;
+}
+.Header .NavbarContainer {
+  background-color: white;
+}
+.Header .NavbarContainer .Brand {
+  display: none;
+}
+.Header .NavbarContainer .active {
+  background-color: red;
+}
+.Header .NavbarContainer .Link,
+.Header .NavbarContainer .LinkNoMargin {
+  font-size: 18px;
+  display: inline-block;
+  text-decoration: none;
+}
+.Header .NavbarContainer .Link {
+  margin-right: 45px;
+}
+.Header .NavbarContainer .LinkNoMargin {
+  margin-left: 30px;
+}
+.Header .LogoHeader,
+.Header .NavbarStyles {
+  max-width: 73%;
+  margin: auto auto;
+}
+@media (max-width: 1200px) {
+  .Header .NavbarContainer .Link {
+    margin-right: 32px;
+  }
+}
+@media (max-width: 992px) {
+  .Header .LogoHeader,
+  .Header .NavbarStyles {
+    max-width: 100%;
+    padding: 10px;
+  }
+  .Header .NavbarContainer .Brand {
+    display: block;
+  }
+}/*# sourceMappingURL=Header.module.css.map */
