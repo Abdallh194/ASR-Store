@@ -13,7 +13,7 @@ const {
   img2,
   start,
 } = styles;
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 const HomePage = () => {
   return (
     <div className={HomePageSytyles}>
@@ -22,13 +22,13 @@ const HomePage = () => {
           <Col xs={12} md={12} lg={6} className={InfoCard}>
             <div className={topHead}>YOU CAN NOT MISS IT</div>
             <div className={MainHead}>
-              <motion.span
-                initial={{ x: -30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1.2 }}
+              <span
+              // initial={{ x: -30, opacity: 0 }}
+              // whileInView={{ x: 0, opacity: 1 }}
+              // transition={{ duration: 1.2 }}
               >
                 Black Friday
-              </motion.span>
+              </span>
             </div>
             <div className={BtmHead}>UP TO 50% OFF</div>
             <div className={desc}>
@@ -47,10 +47,10 @@ const HomePage = () => {
           </Col>
           <Col xs={12} md={12} lg={6} className={ImageCard}>
             <div className={img1}>
-              <motion.img
-                initial={{ x: 30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1.2 }}
+              <img
+                // initial={{ x: 30, opacity: 0 }}
+                // whileInView={{ x: 0, opacity: 1 }}
+                // transition={{ duration: 1.2 }}
                 src="/home_01.png"
                 alt="home_01"
                 width={400}
@@ -59,10 +59,10 @@ const HomePage = () => {
               />
             </div>
             <div className={img2}>
-              <motion.img
-                initial={{ x: 30, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 1.2 }}
+              <img
+                // initial={{ x: 30, opacity: 0 }}
+                // whileInView={{ x: 0, opacity: 1 }}
+                // transition={{ duration: 1.2 }}
                 src="/home_02.png"
                 alt="home_02"
                 width={450}

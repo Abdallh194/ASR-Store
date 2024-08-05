@@ -1,7 +1,7 @@
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styles from "./Header.module.css";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 import { TiShoppingCart } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
 const {
@@ -20,10 +20,10 @@ function CollapsibleExample() {
     <header className={Header}>
       <div className={LogoHeader}>
         <div className={Logo}>
-          <motion.img
-            initial={{ x: -30, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2 }}
+          <img
+            // initial={{ x: -30, opacity: 0 }}
+            // whileInView={{ x: 0, opacity: 1 }}
+            // transition={{ duration: 1.2 }}
             src="/logo.png"
             alt="logo"
             width={100}
@@ -58,12 +58,12 @@ function CollapsibleExample() {
               </Nav.Link>
             </Nav>
             <Nav>
-              <NavLink className={LinkNoMargin} to="login">
+              <Nav.Link as={NavLink} className={LinkNoMargin} to="login">
                 Login
-              </NavLink>
-              <NavLink className={LinkNoMargin} to="register">
+              </Nav.Link>
+              <Nav.Link as={NavLink} className={LinkNoMargin} to="register">
                 Register
-              </NavLink>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

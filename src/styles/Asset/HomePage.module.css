@@ -48,6 +48,9 @@
 .HomePageSytyles .read,
 .HomePageSytyles .start {
   padding: 7px 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   color: black;
   margin-top: 25px;
   font-size: 19px;
@@ -197,5 +200,6 @@
   .HomePageSytyles .ImageCard .img2::before {
     width: 204px;
     height: 204px;
+    background-color: #ff5fa3;
   }
 }/*# sourceMappingURL=HomePage.module.css.map */
