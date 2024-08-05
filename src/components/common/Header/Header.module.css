@@ -37,6 +37,7 @@
 }
 .Header .NavbarContainer {
   background-color: white;
+  padding: 8px 0;
 }
 .Header .NavbarContainer .Brand {
   display: none;

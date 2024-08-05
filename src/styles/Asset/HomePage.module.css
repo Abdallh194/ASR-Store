@@ -133,8 +133,8 @@
 }
 .HomePageSytyles .ImageCard .img1::before {
   background-color: #8dc8c4;
-  height: 380px;
-  width: 380px;
+  height: 340px;
+  width: 340px;
   z-index: 2;
 }
 @media (max-width: 1600px) {

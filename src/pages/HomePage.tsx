@@ -34,7 +34,6 @@ const HomePage = () => {
             <div className={desc}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Voluptates repellendus minus alias, dolore pariatur sunt deserunt
-              suscipit quisquam minima ullam similique aspernatur
             </div>
             <div className="btns d-flex">
               <div className={read}>
