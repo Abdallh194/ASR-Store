@@ -1,0 +1,41 @@
+.cartBasket {
+  font-size: 31px;
+  position: relative;
+  margin-right: 15px;
+  display: block;
+  color: black;
+  &::before {
+    position: absolute;
+    content: attr(cart-length);
+    right: -13px;
+    top: 0;
+    background-color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid rgb(153, 153, 153);
+    font-size: 19px;
+    line-height: 1.35;
+    text-align: center;
+  }
+}
+.ChangingCartQuantity {
+  animation: ScalingCartQuantity 300ms ease-out;
+}
+@keyframes ScalingCartQuantity {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.8);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,438 @@
+.Categoris {
+  margin-top: 65px;
+}
+.Categoris .CategorisCard {
+  background-color: white;
+  border-radius: 10px;
+  width: calc(16.6666666667% - 30px);
+  box-shadow: 0 4px 16px rgba(17, 17, 26, 0.1), 0 8px 32px rgba(17, 17, 26, 0.05);
+  margin: 5px auto;
+}
+.Categoris .CategorisCard .LinkStyle {
+  height: 100%;
+  padding: 8px;
+  display: flex;
+  text-decoration: none !important;
+  align-items: center;
+}
+.Categoris .CategorisCard .title {
+  font-size: 17px;
+  color: black;
+  font-weight: 700;
+  margin-left: 5px;
+}
+@media (max-width: 1440px) {
+  .Categoris .CategorisCard {
+    width: calc(33.3333333333% - 20px);
+  }
+}
+@media (max-width: 1200px) {
+  .Categoris .CategorisCard {
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 992px) {
+  .Categoris {
+    margin-top: 45px;
+  }
+  .Categoris .CategorisCard img {
+    max-width: 33%;
+  }
+  .Categoris .CategorisCard .title {
+    font-size: 13px;
+  }
+}
+
+.HomePageSytyles {
+  margin-top: 100px;
+}
+.HomePageSytyles .topHead {
+  font-size: 39px;
+  letter-spacing: 4px;
+}
+.HomePageSytyles .MainHead {
+  font-size: 158px;
+  font-family: "Dancing Script";
+  position: relative;
+  color: white;
+  margin-top: -30px;
+  font-weight: bold;
+}
+.HomePageSytyles .MainHead span {
+  position: relative;
+  display: block;
+}
+.HomePageSytyles .MainHead::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 66%;
+  top: 50%;
+  left: -45px;
+  transform: translateY(-50%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 99% 100%, 2% 100%);
+          clip-path: polygon(0 0, 100% 0, 99% 100%, 2% 100%);
+  background-color: #ff5fa3;
+  z-index: 0;
+}
+.HomePageSytyles .BtmHead {
+  background-color: #8dc8c4;
+  font-size: 43px;
+  -webkit-clip-path: polygon(3% 0, 100% 0, 99% 100%, 0 100%);
+          clip-path: polygon(3% 0, 100% 0, 99% 100%, 0 100%);
+  margin-top: -41px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0px 23px;
+}
+.HomePageSytyles .desc {
+  font-size: 20px;
+  font-weight: 200;
+  margin-top: 20px;
+}
+.HomePageSytyles .read,
+.HomePageSytyles .start {
+  padding: 7px 18px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: black;
+  margin-top: 25px;
+  font-size: 19px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.HomePageSytyles .read span,
+.HomePageSytyles .start span {
+  position: relative;
+  z-index: 1;
+}
+.HomePageSytyles .read::before, .HomePageSytyles .read::after,
+.HomePageSytyles .start::before,
+.HomePageSytyles .start::after {
+  position: absolute;
+  content: "";
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.HomePageSytyles .read:hover::before,
+.HomePageSytyles .start:hover::before {
+  top: 0;
+}
+.HomePageSytyles .read:hover::after,
+.HomePageSytyles .start:hover::after {
+  left: 0;
+}
+.HomePageSytyles .read {
+  background-color: white;
+  margin-right: 20px;
+}
+.HomePageSytyles .read::after {
+  background-color: #ff5fa3;
+  left: 100%;
+  top: 0;
+}
+.HomePageSytyles .start {
+  border: 2px solid black;
+}
+.HomePageSytyles .start::before {
+  background-color: #8dc8c4;
+  top: 100%;
+  left: 0;
+}
+.HomePageSytyles .ImageCard {
+  display: flex;
+}
+.HomePageSytyles .ImageCard .img1,
+.HomePageSytyles .ImageCard .img2 {
+  width: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.HomePageSytyles .ImageCard .img1 img,
+.HomePageSytyles .ImageCard .img2 img {
+  position: relative;
+  z-index: 3;
+}
+.HomePageSytyles .ImageCard .img1::before, .HomePageSytyles .ImageCard .img1::after,
+.HomePageSytyles .ImageCard .img2::before,
+.HomePageSytyles .ImageCard .img2::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.HomePageSytyles .ImageCard .img2::before {
+  background-color: #81b8b4;
+  width: 480px;
+  height: 480px;
+  z-index: 1;
+}
+.HomePageSytyles .ImageCard .img1::before {
+  background-color: #8dc8c4;
+  height: 340px;
+  width: 340px;
+  z-index: 2;
+}
+@media (max-width: 1600px) {
+  .HomePageSytyles .MainHead {
+    font-size: 135px;
+  }
+  .HomePageSytyles .BtmHead {
+    margin-top: -35px;
+  }
+}
+@media (max-width: 1400px) {
+  .HomePageSytyles .MainHead {
+    font-size: 114px;
+  }
+  .HomePageSytyles .BtmHead {
+    margin-top: -30px;
+  }
+}
+@media (max-width: 1200px) {
+  .HomePageSytyles .topHead {
+    font-size: 33px;
+  }
+  .HomePageSytyles .MainHead {
+    font-size: 92px;
+    margin-top: -14px;
+  }
+  .HomePageSytyles .BtmHead {
+    margin-top: -24px;
+  }
+  .HomePageSytyles .ImageCard .img1::before {
+    height: 330px;
+    width: 330px;
+  }
+  .HomePageSytyles .ImageCard .img2::before {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media (max-width: 767px) {
+  .HomePageSytyles {
+    margin-top: 40px;
+  }
+  .HomePageSytyles .topHead {
+    font-size: 26px;
+  }
+  .HomePageSytyles .MainHead {
+    font-size: 77px;
+  }
+  .HomePageSytyles .MainHead::before {
+    left: -26px;
+  }
+  .HomePageSytyles .BtmHead {
+    font-size: 30px;
+    margin-top: -21px;
+  }
+  .HomePageSytyles .ImageCard {
+    margin-top: 35px;
+  }
+  .HomePageSytyles .ImageCard .img1::before {
+    height: 210px;
+    width: 210px;
+  }
+  .HomePageSytyles .ImageCard .img2::before {
+    width: 204px;
+    height: 204px;
+    background-color: #ff5fa3;
+  }
+}
+
+.ShowItems {
+  background-color: white;
+  margin-top: 90px;
+  font-family: "Montserrat";
+}
+.ShowItems .topMemu {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+.ShowItems .topMemu .head {
+  font-size: 33px;
+}
+.ShowItems .row {
+  margin-top: 15px;
+}
+.ShowItems .form {
+  display: flex;
+  align-items: center;
+  width: 33%;
+}
+.ShowItems .formInput {
+  border-radius: 0;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.ShowItems .searchBtn {
+  background-color: #ff5fa3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 110px;
+  border-top-right-radius: 8px;
+  color: white;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.ShowItems .ProductCard {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  width: calc(20% - 20px);
+  margin: 10px auto;
+  text-decoration: none !important;
+  color: black;
+  padding: 20px;
+  text-align: center;
+}
+.ShowItems .ProductCard:hover .imgcontainer img {
+  transform: scale(1.2);
+}
+.ShowItems .ProductCard:hover .Button {
+  background-color: #ff5fa3;
+  color: white;
+}
+.ShowItems .ProductCard .FavIcon {
+  font-size: 21px;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: bold;
+}
+.ShowItems .ProductCard .FavIcon:hover {
+  color: red;
+}
+.ShowItems .ProductCard .imgcontainer {
+  margin-top: 25px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ShowItems .ProductCard .imgcontainer img {
+  transition: 0.3s;
+}
+.ShowItems .ProductCard .discount,
+.ShowItems .ProductCard .Button {
+  border: 1px solid #eee;
+  transition: 0.2s;
+  border-radius: 5px;
+}
+.ShowItems .ProductCard .discount {
+  display: flex;
+  padding: 2px 17px;
+  align-items: center;
+}
+.ShowItems .ProductCard .head {
+  font-weight: 600;
+  font-size: 20px;
+  margin: 10px 0;
+}
+.ShowItems .ProductCard .price {
+  font-weight: 500;
+  padding: 10px 0;
+}
+.ShowItems .ProductCard .Button {
+  background-color: transparent;
+  padding: 10px 17px;
+}
+.ShowItems .ProductCard .buyBtn_Price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+@media (max-width: 1450px) {
+  .ShowItems .ProductCard {
+    width: calc(25% - 20px);
+  }
+}
+@media (max-width: 1200px) {
+  .ShowItems .ProductCard {
+    width: calc(33.3333333333% - 20px);
+  }
+}
+@media (max-width: 992px) {
+  .ShowItems {
+    margin-top: 30px;
+  }
+  .ShowItems .ProductCard {
+    width: calc(50% - 10px);
+    padding: 20px 6px;
+  }
+  .ShowItems .ProductCard .buyBtn_Price {
+    display: block;
+  }
+  .ShowItems .ProductCard .head {
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .ShowItems .ProductCard .discount {
+    padding: 2px 10px;
+    font-size: 14px;
+  }
+}
+
+.basket {
+  position: fixed;
+  bottom: 53px;
+  left: 53px;
+}
+
+.Haert {
+  position: fixed;
+  bottom: 120px;
+  left: 53px;
+  font-size: 30px;
+  color: red;
+}
+.Haert::before {
+  position: absolute;
+  content: attr(cart-length);
+  right: -13px;
+  top: 0;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid rgb(153, 153, 153);
+  font-size: 19px;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.ChangingCartQuantity {
+  animation: ScalingCartQuantity 300ms ease-out;
+}
+
+@keyframes ScalingCartQuantity {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(0.8);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=Global.module.css.map */

@@ -1,0 +1,75 @@
+$green-color: #8dc8c4;
+$pink-color: #ff5fa3;
+.Cart {
+  margin-top: 40px;
+  .container {
+    max-width: 1500px;
+  }
+  .head {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .HeadersStyles {
+    background-color: $green-color;
+    padding: 10px 0;
+    width: calc(100% / 5);
+    text-align: center;
+    color: white;
+    font-size: 19px;
+    font-weight: 500;
+  }
+  .CartItemsDetailsContainer {
+    background-color: white;
+    border-bottom: 1px solid $pink-color;
+    .CartItemsDetails {
+      width: calc(100% / 5);
+      display: flex;
+      height: 77.6px;
+      padding: 5px 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      color: rgb(85, 85, 85);
+    }
+  }
+  .Bill {
+    form {
+      display: flex;
+      .form-control {
+        border-radius: 0;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-color: white;
+        height: 50px;
+      }
+      .btn {
+        border-radius: 0;
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background-color: $green-color;
+        color: white;
+        border-color: $green-color;
+      }
+    }
+    .billHeaders {
+      display: flex;
+      justify-content: space-between;
+      font-size: 19px;
+    }
+  }
+  @media (max-width: 992px) {
+    .HeadersStyles {
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .Bill {
+      margin-top: 30px;
+    }
+  }
+}

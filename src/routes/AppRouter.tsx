@@ -1,9 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //MainLayout
-import MainLayout from "@layouts/MainLayout/MainLayout";
+import { lazy, Suspense } from "react";
+
+const MainLayout = lazy(() => import("@layouts/MainLayout/MainLayout"));
 // Pages
+const Cart = lazy(() => import("@pages/Cart"));
+const AboutUs = lazy(() => import("@pages/AboutUs"));
 import HomePage from "@pages/HomePage";
-import AboutUs from "@pages/AboutUs";
+
 import Categories from "@pages/Categories";
 import ContactUs from "@pages/ContactUs";
 import Products from "@pages/Products";
@@ -11,10 +15,19 @@ import Login from "@pages/Login";
 import Register from "@pages/Register";
 import Error from "@pages/Error";
 
+import FavItems from "@pages/FavItems";
+
+import Loading from "@components/feedback/Loading";
+import LottieHandler from "@components/feedback/LottieHandler/LottieHandler";
+
 const routers = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: (
+      <Suspense fallback={<LottieHandler type="loading" />}>
+        <MainLayout />
+      </Suspense>
+    ),
     errorElement: <Error />,
     children: [
       {
@@ -23,7 +36,11 @@ const routers = createBrowserRouter([
       },
       {
         path: "about",
-        element: <AboutUs />,
+        element: (
+          <Suspense fallback={<LottieHandler type="loading" />}>
+            <AboutUs />,
+          </Suspense>
+        ),
       },
       {
         path: "categories",
@@ -42,7 +59,20 @@ const routers = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "products/:prefix",
+        path: "cart",
+        element: (
+          <Suspense fallback={<Loading />}>
+            <Cart />,
+          </Suspense>
+        ),
+      },
+      {
+        path: "fav",
+        element: <FavItems />,
+      },
+
+      {
+        path: "categories/products/:prefix",
         element: <Products />,
         loader: ({ params }) => {
           if (
