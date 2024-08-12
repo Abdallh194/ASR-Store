@@ -7,7 +7,7 @@ import ShowProducts from "./ShowProducts";
 const Products = () => {
   const params = useParams();
   const dispatch = useAppDispatch();
-  const { items } = useAppSelector((state) => state.Products);
+  const { items, loading, error } = useAppSelector((state) => state.Products);
   useEffect(() => {
     const promise = dispatch(GetProductsThunck(params.prefix as string));
 
@@ -20,7 +20,7 @@ const Products = () => {
   return (
     <div>
       <div>{params.prefix}</div>
-      <ShowProducts AllItems={items} />
+      <ShowProducts AllItems={items} loading={loading} error={error} />
     </div>
   );
 };
