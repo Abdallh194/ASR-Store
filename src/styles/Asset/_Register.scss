@@ -1,0 +1,45 @@
+.RegisterStyles {
+  padding: 40px 0;
+  position: relative;
+  .InputsCard {
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .head {
+    font-size: 52px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  .info {
+    font-size: 18px;
+    padding: 10px 0;
+    letter-spacing: 1px;
+  }
+  form {
+    margin-top: 30px;
+  }
+  .Lable {
+    font-size: 18px;
+  }
+  #submit {
+    background-color: $green-color;
+    border: none;
+    width: 170px;
+    padding: 8px;
+    margin-left: 13px;
+    font-weight: 500;
+  }
+  .formInput {
+    height: 50px;
+  }
+  @media (max-width: 767px) {
+    .InputsCard {
+      padding: 8px;
+    }
+    .ImgCard {
+      margin-top: 30px;
+    }
+  }
+}

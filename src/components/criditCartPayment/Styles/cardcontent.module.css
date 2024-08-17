@@ -1,0 +1,12 @@
+.cardcontent {
+  background-color: transparent !important;
+  border: none !important;
+}
+.cardcontent .input {
+  height: 50px;
+}
+@media (max-width: 767px) {
+  .cardcontent {
+    padding: 0 !important;
+  }
+}/*# sourceMappingURL=cardcontent.module.css.map */

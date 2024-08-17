@@ -22,7 +22,7 @@ const LottieHandler = ({ type, message }: LottieHandlerProps) => {
     <div>
       <Lottie
         animationData={lottie}
-        style={{ width: "500px", margin: "40px auto" }}
+        style={{ width: "300px", margin: "40px auto" }}
       />
       <h3 style={{ textAlign: "center", color: "red" }}>{message}</h3>
     </div>

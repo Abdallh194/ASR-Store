@@ -3,7 +3,6 @@ import ShowProducts from "./ShowProducts";
 
 const FavItems = () => {
   const { FavItem, loading, error } = useAppSelector((state) => state.Cart);
-  console.log(FavItem);
 
   return (
     <div className="FavItem">

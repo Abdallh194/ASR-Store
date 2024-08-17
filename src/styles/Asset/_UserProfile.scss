@@ -1,0 +1,49 @@
+.UserProfileStyle {
+  padding: 40px 0;
+  .mainhead {
+    margin-top: 20px;
+    font-size: 34px;
+    font-weight: 400;
+  }
+  .maininfo {
+    width: 50%;
+    font-size: 23px;
+    color: rgba(0, 0, 0, 0.569);
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .mainhead,
+  .maininfo {
+    text-align: center;
+  }
+  .headerContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .details {
+    font-size: 20px;
+  }
+  .headers {
+    font-size: 26px;
+  }
+  .checkoutHead {
+    text-decoration: none;
+    color: black;
+  }
+  @media (max-width: 992px) {
+    .maininfo {
+      width: 100%;
+    }
+    .headerContainer {
+      display: block;
+      margin-top: 15px;
+    }
+    .dflexMobile {
+      display: flex;
+    }
+    .mtinmobile {
+      margin-bottom: 10px;
+    }
+  }
+}

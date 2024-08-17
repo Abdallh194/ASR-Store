@@ -1,0 +1,77 @@
+$green-color: #8dc8c4;
+$pink-color: #ff5fa3;
+.LoginStyles {
+  padding: 40px 0;
+  position: relative;
+  .head {
+    font-size: 52px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  .subhead {
+    font-size: 27px;
+    margin-top: -3px;
+    letter-spacing: 1px;
+  }
+  .info {
+    color: #747474;
+    font-size: 17px;
+    margin-top: 19px;
+    width: 90%;
+  }
+  .formInput {
+    height: 50px;
+    width: 90%;
+  }
+  .Lable {
+    font-size: 19px;
+  }
+  form {
+    margin-top: 30px;
+  }
+  #submit {
+    background-color: $green-color;
+    border: none;
+    width: 140px;
+    border-radius: 0;
+    padding: 8px 0;
+    font-size: 18px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $pink-color;
+      width: 9px;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .TextCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .LottieStyles {
+    max-width: 90%;
+  }
+  @media (max-width: 992px) {
+    .head {
+      font-size: 45px;
+    }
+    .subhead {
+      font-size: 22px;
+    }
+    .info,
+    .formInput {
+      width: 100%;
+    }
+    .ImgCard {
+      margin-top: 50px;
+    }
+    .LottieStyles {
+      max-width: 100%;
+    }
+  }
+}

@@ -10,6 +10,8 @@ import { motion } from "framer-motion";
 //router
 import { NavLink } from "react-router-dom";
 import Basket from "@components/feedback/Basket";
+import { useAppSelector } from "@Redux/hooks";
+import { Avatar } from "@mui/material";
 
 const {
   Header,
@@ -26,6 +28,7 @@ const {
   searchBtn,
 } = styles;
 function CollapsibleExample() {
+  const { isloggin, NewUser } = useAppSelector((state) => state.login);
   return (
     <header className={Header}>
       <div className={LogoHeader}>
@@ -75,13 +78,26 @@ function CollapsibleExample() {
                 Contact Us
               </Nav.Link>
             </Nav>
-            <Nav>
-              <Nav.Link as={NavLink} className={LinkNoMargin} to="login">
-                Login
-              </Nav.Link>
-              <Nav.Link as={NavLink} className={LinkNoMargin} to="register">
-                Register
-              </Nav.Link>
+            <Nav className="">
+              {isloggin ? (
+                <Nav.Link
+                  as={NavLink}
+                  className={`${LinkNoMargin} d-flex align-items-center`}
+                  to="/userprofile"
+                >
+                  <Avatar style={{ marginRight: "8px" }} />
+                  {NewUser.FirstName} {NewUser.LastName}
+                </Nav.Link>
+              ) : (
+                <>
+                  <Nav.Link as={NavLink} className={LinkNoMargin} to="login">
+                    Login
+                  </Nav.Link>
+                  <Nav.Link as={NavLink} className={LinkNoMargin} to="register">
+                    Register
+                  </Nav.Link>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Navbar>

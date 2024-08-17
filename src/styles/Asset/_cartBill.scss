@@ -1,0 +1,40 @@
+.Bill {
+  form {
+    display: flex;
+    .formcontrol {
+      border-radius: 0;
+      border-top-left-radius: 8px;
+      border-bottom-left-radius: 8px;
+      border-color: white;
+      height: 50px;
+    }
+    .btn {
+      border-radius: 0;
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px;
+      background-color: $green-color;
+      color: white;
+      border-color: $green-color;
+    }
+  }
+  .billHeaders {
+    display: flex;
+    justify-content: space-between;
+    font-size: 19px;
+  }
+  .checkoutbtn {
+    background-color: $pink-color;
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+  }
+  @media (max-width: 992px) {
+    margin-top: 30px;
+  }
+}

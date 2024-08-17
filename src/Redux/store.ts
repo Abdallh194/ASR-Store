@@ -13,18 +13,20 @@ import {
   REHYDRATE,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import login from "./user/LoginSlice";
 
 // const rootPersistConfig = {
 const rootPersistConfig = {
   key: "root",
   storage,
-  whitelist: ["Cart"],
+  whitelist: ["Cart", "login"],
 };
 
 const rootReducer = combineReducers({
   categories,
   Products,
   Cart,
+  login,
 });
 const PersistedReducer = persistReducer(rootPersistConfig, rootReducer);
 const store = configureStore({

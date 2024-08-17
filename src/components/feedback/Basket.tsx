@@ -24,7 +24,6 @@ const Basket = () => {
   }, [CartItem]);
   const QuantitClass = `${cartBasket} ${isAnimate ? ChangingCartQuantity : ""}`;
 
-  console.log("Basket Loading");
   return (
     <>
       <Link to="/cart" className={QuantitClass} cart-length={CartItem.length}>

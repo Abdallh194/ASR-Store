@@ -6,19 +6,23 @@ const MainLayout = lazy(() => import("@layouts/MainLayout/MainLayout"));
 // Pages
 const Cart = lazy(() => import("@pages/Cart"));
 const AboutUs = lazy(() => import("@pages/AboutUs"));
+const Login = lazy(() => import("@pages/Login"));
+const Register = lazy(() => import("@pages/Register"));
+
 import HomePage from "@pages/HomePage";
 
 import Categories from "@pages/Categories";
 import ContactUs from "@pages/ContactUs";
 import Products from "@pages/Products";
-import Login from "@pages/Login";
-import Register from "@pages/Register";
+
 import Error from "@pages/Error";
 
 import FavItems from "@pages/FavItems";
 
 import Loading from "@components/feedback/Loading";
 import LottieHandler from "@components/feedback/LottieHandler/LottieHandler";
+import UserProfile from "@pages/UserProfile";
+import CheckOut from "@pages/CheckOut";
 
 const routers = createBrowserRouter([
   {
@@ -52,11 +56,35 @@ const routers = createBrowserRouter([
       },
       {
         path: "login",
-        element: <Login />,
+        element: (
+          <Suspense fallback={<LottieHandler type="loading" />}>
+            <Login />,
+          </Suspense>
+        ),
+      },
+      {
+        path: "cart/checkout",
+        element: (
+          <Suspense fallback={<LottieHandler type="loading" />}>
+            <CheckOut />,
+          </Suspense>
+        ),
       },
       {
         path: "register",
-        element: <Register />,
+        element: (
+          <Suspense fallback={<LottieHandler type="loading" />}>
+            <Register />,
+          </Suspense>
+        ),
+      },
+      {
+        path: "userprofile",
+        element: (
+          <Suspense fallback={<LottieHandler type="loading" />}>
+            <UserProfile />,
+          </Suspense>
+        ),
       },
       {
         path: "cart",
