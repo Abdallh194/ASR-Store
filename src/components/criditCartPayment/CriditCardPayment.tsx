@@ -16,7 +16,11 @@ import { SubmitHandler, useForm } from "react-hook-form";
 
 import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Form } from "react-bootstrap";
+import { Form, Spinner } from "react-bootstrap";
+import { useState } from "react";
+import { Modal } from "react-bootstrap";
+import { useAppDispatch } from "@Redux/hooks";
+import { ConfirmOrderClearCartItem } from "@Redux/Cart/CartSlice";
 
 const CriditCardSchema = z.object({
   CreditCardNumber: z
@@ -27,13 +31,18 @@ const CriditCardSchema = z.object({
   CardCVV: z.string().min(2, { message: "Card CVV Required" }),
 });
 type TCredit = z.infer<typeof CriditCardSchema>;
-const SubmitForm: SubmitHandler<TCredit> = (data) => {
-  console.log(data);
-};
-type TEmail = {
+
+type TProps = {
   UserEmail: string;
 };
-export default function CriditCardPayment({ UserEmail }: TEmail) {
+export default function CriditCardPayment({ UserEmail }: TProps) {
+  //modal states
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const [loading, setloading] = useState(false);
+
+  const dispatch = useAppDispatch();
+
   const {
     register,
     handleSubmit,
@@ -43,6 +52,20 @@ export default function CriditCardPayment({ UserEmail }: TEmail) {
     resolver: zodResolver(CriditCardSchema),
   });
 
+  const ConfirmOrderHandler = () => {
+    setloading(true);
+    const debounce = setTimeout(() => {
+      setloading(false);
+      dispatch(ConfirmOrderClearCartItem());
+      handleClose();
+    }, 1500);
+    return () => {
+      clearTimeout(debounce);
+    };
+  };
+  const SubmitForm: SubmitHandler<TCredit> = () => {
+    setShow(true);
+  };
   return (
     <Card className={cardcontent}>
       <h3> Payment information</h3>
@@ -143,6 +166,34 @@ export default function CriditCardPayment({ UserEmail }: TEmail) {
           </Button>
         </CardActions>
       </CardContent>
+      <Modal backdrop="static" show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm order</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Are you sure you want to proceed with the payment confirmation?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            variant="solid"
+            color="danger"
+            onClick={() => {
+              handleClose();
+            }}
+          >
+            Close
+          </Button>
+          <Button variant="solid" color="success" onClick={ConfirmOrderHandler}>
+            {loading ? (
+              <>
+                <Spinner animation="border" size="sm"></Spinner> Loading....
+              </>
+            ) : (
+              "Confirm"
+            )}
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Card>
   );
 }

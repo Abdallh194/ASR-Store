@@ -12,6 +12,7 @@ export interface IProductsState {
   DefaultUserEmail: string;
   DefaultUserPassword: string;
   isloggin: boolean;
+  isToCheckout: boolean;
 }
 const initialState: IProductsState = {
   NewUser: {
@@ -25,6 +26,7 @@ const initialState: IProductsState = {
   DefaultUserPassword: "12345678@",
   exsitEmail: false,
   isloggin: false,
+  isToCheckout: false,
 };
 const loginSlice = createSlice({
   name: "products",
@@ -47,11 +49,20 @@ const loginSlice = createSlice({
     },
     ActiveLogOut: (state) => {
       state.isloggin = false;
+      state.isToCheckout = false;
+    },
+    ActivetoCheckut: (state) => {
+      state.isToCheckout = true;
     },
   },
 });
 
-export const { AddNewUser, ValidateEmailAddress, ActiveLogin, ActiveLogOut } =
-  loginSlice.actions;
+export const {
+  AddNewUser,
+  ValidateEmailAddress,
+  ActiveLogin,
+  ActiveLogOut,
+  ActivetoCheckut,
+} = loginSlice.actions;
 
 export default loginSlice.reducer;

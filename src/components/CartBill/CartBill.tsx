@@ -1,7 +1,8 @@
-import { useAppSelector } from "@Redux/hooks";
+import { useAppDispatch, useAppSelector } from "@Redux/hooks";
 import { Button, Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styles from "@styles/Asset/Global.module.css";
+import { ActivetoCheckut } from "@Redux/user/LoginSlice";
 const { Bill, billHeaders, formcontrol, btn, checkoutbtn } = styles;
 
 type TItem = {
@@ -14,8 +15,9 @@ type TItem = {
     Quantity: number;
     discount: string;
   }[];
+  show: boolean;
 };
-const CartBill = ({ CartItem }: TItem) => {
+const CartBill = ({ CartItem, show }: TItem) => {
   const { isloggin } = useAppSelector((state) => state.login);
   const BiilLoopItems = CartItem.map((e) => (
     <div key={e.id} className={`${billHeaders} mt-2`}>
@@ -28,6 +30,7 @@ const CartBill = ({ CartItem }: TItem) => {
     CartItem.map((e) => (total += e.price * e.Quantity));
     return total;
   };
+  const dispatch = useAppDispatch();
   return (
     <div className={Bill}>
       <Form>
@@ -55,14 +58,24 @@ const CartBill = ({ CartItem }: TItem) => {
         <div>${TotalBillPrice()} </div>
       </div>
 
-      {isloggin ? (
-        <Link to="checkout" className={checkoutbtn}>
-          Proceced To CheckOut
-        </Link>
+      {show ? (
+        isloggin ? (
+          <Link to="checkout" className={checkoutbtn}>
+            Proceced To CheckOut
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            className={checkoutbtn}
+            onClick={() => {
+              dispatch(ActivetoCheckut());
+            }}
+          >
+            Please Login First
+          </Link>
+        )
       ) : (
-        <Link to="/login" className={checkoutbtn}>
-          Please Login First
-        </Link>
+        ""
       )}
     </div>
   );

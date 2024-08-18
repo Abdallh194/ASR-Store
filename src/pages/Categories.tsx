@@ -7,6 +7,8 @@ import styles from "@styles/Asset/Global.module.css";
 import LoadingComp from "@components/feedback/LoadingComp";
 import LottieHandler from "@components/feedback/LottieHandler/LottieHandler";
 
+import { categories } from "../../public/Api/Data.js";
+
 const { Categoris, CategorisCard, LinkStyle, title } = styles;
 const Categories = () => {
   const dispatch = useAppDispatch();
@@ -24,8 +26,8 @@ const Categories = () => {
       <div className={Categoris}>
         <Container fluid>
           <Row>
-            {recorord.length > 0 ? (
-              recorord.map((e) => {
+            {categories.length > 0 ? (
+              categories.map((e) => {
                 return (
                   <Col md={4} lg="2" className={CategorisCard} key={e.id}>
                     <Link

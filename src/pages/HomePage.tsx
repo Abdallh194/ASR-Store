@@ -90,7 +90,7 @@ const HomePage = () => {
           </Row>
         </Container>
       </div>
-      <Categories /> *
+      <Categories />
       <ShowProducts AllItems={AllItems} loading={loading} error={error} />
     </>
   );

@@ -566,6 +566,7 @@
 
 .UserProfileStyle {
   padding: 40px 0;
+  position: relative;
 }
 .UserProfileStyle .mainhead {
   margin-top: 20px;
@@ -595,8 +596,8 @@
   font-size: 26px;
 }
 .UserProfileStyle .checkoutHead {
-  text-decoration: none;
   color: black;
+  font-size: 18px;
 }
 @media (max-width: 992px) {
   .UserProfileStyle .maininfo {

@@ -4,10 +4,9 @@ import { Container } from "react-bootstrap";
 import styles from "@styles/Asset/Global.module.css";
 import { HiOutlineLogout } from "react-icons/hi";
 import { ActiveLogOut } from "@Redux/user/LoginSlice";
-import { useNavigate } from "react-router-dom";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { HiArrowUpOnSquareStack } from "react-icons/hi2";
+
 const {
   UserProfileStyle,
   mainhead,
@@ -17,6 +16,7 @@ const {
   details,
   mtinmobile,
   dflexMobile,
+  checkoutHead,
 } = styles;
 const UserProfile = () => {
   const { isloggin, NewUser } = useAppSelector((state) => state.login);
@@ -26,46 +26,10 @@ const UserProfile = () => {
   //navigate
   const navigate = useNavigate();
 
-  //modal states
-  const [show, setShow] = useState(CartItem.length > 0 ? true : false);
-
-  const handleClose = () => setShow(false);
-
   return (
     <div className={UserProfileStyle}>
       {isloggin ? (
         <Container>
-          {/* <Link to="/cart/checkout" className={checkoutHead}>
-            Do you want to continue to the payment page?
-          </Link> */}
-          <Modal backdrop="static" show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Important note</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              Do you want to continue to the payment page?
-            </Modal.Body>
-            <Modal.Footer>
-              <Button
-                variant="danger"
-                onClick={() => {
-                  handleClose();
-                  console.log(handleClose());
-                }}
-              >
-                Close
-              </Button>
-              <Button
-                variant="success"
-                onClick={() => {
-                  navigate("/cart/checkout");
-                }}
-              >
-                Continue
-              </Button>
-            </Modal.Footer>
-          </Modal>
-
           <div className={mainhead}>Personal Details</div>
           <div className={maininfo}>
             Please update your data regularly so that you do not miss out on
@@ -108,6 +72,13 @@ const UserProfile = () => {
               <div className={details}>{NewUser.Phone}</div>
             </div>
           </div>
+          <hr />
+          {CartItem.length > 0 ? (
+            <Link to="/cart/checkout" className={checkoutHead}>
+              Do you want to continue to the payment page{" "}
+              <HiArrowUpOnSquareStack />
+            </Link>
+          ) : null}
         </Container>
       ) : (
         <Login />

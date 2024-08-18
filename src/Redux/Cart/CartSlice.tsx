@@ -23,12 +23,14 @@ export interface IProductsState {
   }[];
   loading: "pending" | "succeeded" | "failed";
   error: string | null;
+  confirmOrder: boolean;
 }
 const initialState: IProductsState = {
   CartItem: [],
   FavItem: [],
   loading: "pending",
   error: null,
+  confirmOrder: false,
 };
 const productsSlice = createSlice({
   name: "cart",
@@ -62,9 +64,21 @@ const productsSlice = createSlice({
         state.FavItem.push(action.payload);
       }
     },
+    ConfirmOrderClearCartItem: (state) => {
+      state.CartItem = [];
+      state.confirmOrder = true;
+    },
+    ResetConfirmOrderFunctionality: (state) => {
+      state.confirmOrder = false;
+    },
   },
 });
 
-export const { AddItemToCard, DeleteItemFromCard, AddItemToFavList } =
-  productsSlice.actions;
+export const {
+  AddItemToCard,
+  DeleteItemFromCard,
+  AddItemToFavList,
+  ConfirmOrderClearCartItem,
+  ResetConfirmOrderFunctionality,
+} = productsSlice.actions;
 export default productsSlice.reducer;

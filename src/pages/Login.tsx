@@ -26,8 +26,13 @@ const {
 } = styles;
 const Login = () => {
   //selector
-  const { DefaultUserEmail, DefaultUserPassword, isloggin, NewUser } =
-    useAppSelector((state) => state.login);
+  const {
+    DefaultUserEmail,
+    DefaultUserPassword,
+    isloggin,
+    NewUser,
+    isToCheckout,
+  } = useAppSelector((state) => state.login);
 
   //navigate
   const navigate = useNavigate();
@@ -58,8 +63,13 @@ const Login = () => {
         data.password === DefaultUserPassword) ||
       (data.email === NewUser.Email && data.password === NewUser.Password)
     ) {
-      dispatch(ActiveLogin());
-      navigate("/userprofile");
+      if (isToCheckout) {
+        dispatch(ActiveLogin());
+        navigate("/cart/checkout");
+      } else {
+        dispatch(ActiveLogin());
+        navigate("/userprofile");
+      }
     } else {
       setisLoginError(true);
     }
